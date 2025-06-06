@@ -1,0 +1,19 @@
+{% extends "training/base.html" %}
+{% block title %} Программы тренировок {% endblock %}
+
+{% block content %} 
+    <h1>Все программы: </h1>
+    
+    {% for program in programs %}
+        <div class="program">
+            <h2>
+                <a href="{{ program.get_absolute_url }}"> {{ program.name }} </a>
+            </h2>
+        
+            <p>
+                {{ program.description }}
+            </p>
+        </div>
+    {% endfor %}
+    
+{% endblock %}
